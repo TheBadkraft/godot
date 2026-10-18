@@ -294,3 +294,8 @@ env.Prepend(LIBS=[lib])
 
 # Needed to force rebuilding the core files when the thirdparty code is updated.
 env.Depends(lib, thirdparty_obj)
+
+# ANVL parser (prebuilt static lib)
+env.Append(CPPPATH=["#thirdparty/anvil/include"])
+env.Append(LIBPATH=["#thirdparty/anvil/lib"])
+env.Append(LIBS=["anvil"])   
